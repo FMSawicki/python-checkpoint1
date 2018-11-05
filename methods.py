@@ -5,15 +5,27 @@
 # returns a list of integers between 1 and the number passed in.
 #
 # So if the number 5 is passed in, num_list_with_arg should return [1, 2, 3, 4]
+int_given = int
 
+def num_list_with_arg(int_given):
+    int_list = []
+    for x in range (1, int_given):
+        int_list.append(x)
+    return int_list    
+            
+    
 
 # #2: Modify the has_ruby_exp method below so that it returns a SORTED list of
 # all instructors who have Ruby experience (i.e. where "ruby" == True)
 # The list should contain only names of instructors.
 # make sure you name the list ruby_experience before returning it.
 
-def has_ruby_exp():
+def has_ruby_exp(experience):
     ruby_experience = []
+    for x in experience:
+        if (experience[x]['ruby'] == True):
+            ruby_experience.append(experience[x])
+    return sorted(ruby_experience)
 
     experience = {
         'jimmy': {
